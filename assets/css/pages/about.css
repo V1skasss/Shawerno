@@ -1,0 +1,230 @@
+/*1blok*/
+.about-history {
+    display: flex;
+    align-items: center; /*  Выравниваем элементы по вертикали */
+    max-width: 1250px; /* Ограничиваем ширину всего блока */
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  
+  .history-text {
+    flex: 1; /* Занимаем все доступное место слева */
+    font-size: 1.6em;
+    max-width: 600px; /* Ограничиваем ширину текста */
+    margin-right: 70px; /* Отступ справа от текста до изображений */
+    text-align: left; /* Выравниваем текст по левому краю */
+  }
+  
+  .shaverno-text {
+    color: #EB4200;
+    font-weight: bold;
+  }
+  
+  .history-images {
+    flex: 1; /*  Занимаем все доступное место справа */
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /*  Растягиваем изображения на всю ширину */
+    max-width: 700px; /*  Ограничиваем максимальную ширину изображений */
+  }
+  
+  .history-image-pair {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 100%; /* Убираем ограничение ширины */
+  }
+  
+  .history-image-wrapper {
+    background-color: #3C182E;
+    border-radius: 15px;
+    padding: 17px;
+    box-sizing: border-box;
+    flex: 1; /*  Равномерно распределяем пространство между изображениями */
+    max-width: 48%;
+  }
+  
+  .history-image {
+    border-radius: 15px; /*  Закругление углов для самих фото */
+    width: 100%; /* Растягиваем фото на всю ячейку */
+    height: 100%; /* Растягиваем фото на всю ячейку */
+    object-fit: cover; /* Обрезаем фото, чтобы сохранить пропорции */
+  }
+
+  /*2blok*/
+  .about-today {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1250px;
+  }
+  
+  .today-text {
+    text-align: center;
+    font-size: 1.6em;
+    margin-bottom: 20px; /* Расстояние между абзацами текста */
+  }
+  
+  .today-images {
+    display: flex;
+    justify-content: center; /* Выравниваем изображения по центру */
+    margin-top: 20px; /* Отступ от текста до изображений */
+  }
+  
+  .today-image-wrapper {
+    background-color: #3C182E;
+    border-radius: 15px;
+    padding: 17px;
+    width: 400px; /* Задаем фиксированную ширину для изображений */
+    height: 300px; /* Задаем фиксированную высоту для изображений */
+    overflow: hidden; /* Обрезаем изображение, если оно выходит за рамки */
+    margin: 0 20px; /* Расстояние между картинками */
+  }
+  
+  .today-image {
+    border-radius: 15px;
+    width: 100%; /* Растягиваем фото на всю ячейку */
+    height: 100%; /* Растягиваем фото на всю ячейку */
+    object-fit: cover; /* Обрезаем фото, чтобы сохранить пропорции */
+  }
+  
+  /*3blok*/
+  .about-video {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: 768px) {
+  .about-history {
+    flex-direction: column; /* Переводим в вертикальный режим */
+    align-items: center; /* Центрируем элементы */
+    margin-top: 10px; /* Уменьшаем отступ */
+  }
+
+  .history-text {
+    font-size: 1.2em; /* Уменьшаем размер шрифта */
+    max-width: 90%; /* Увеличиваем ширину текста */
+    margin-right: 0; /* Убираем отступ справа */
+    margin-bottom: 20px; /* Добавляем отступ снизу */
+    text-align: center; /* Центрируем текст */
+  }
+
+  .history-images {
+    max-width: 90%; /* Растягиваем изображения на всю ширину */
+  }
+
+  .history-image-pair {
+    flex-direction: column; /*  изображения располагаются вертикально */
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .history-image-wrapper {
+    max-width: 80%; /* Изображения занимают 80% ширины экрана */
+    margin-bottom: 15px;
+  }
+  /*2 блок*/
+  .about-today {
+    max-width: 100%;
+  }
+
+  .today-text {
+    font-size: 1.2em; /* Уменьшаем размер шрифта */
+    margin-bottom: 10px;
+    padding: 0 10px;
+  }
+
+  .today-images {
+    flex-direction: column; /* Вертикальное расположение изображений */
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .today-image-wrapper {
+    width: 80%; /* Уменьшаем ширину для маленьких экранов */
+    max-width: 600px; /* Задаем максимальную ширину */
+    height: 320px; /* Уменьшаем высоту для маленьких экранов */
+    margin: 10px 0; /* Отступ сверху и снизу */
+  }
+
+  .today-image {
+    border-radius: 10px; /* Меньший радиус скругления */
+  }
+  /*3 блок*/
+  .about-video {
+    margin-top: 10px; /* Уменьшаем верхний отступ */
+    margin-bottom: 40px; /* Уменьшаем нижний отступ */
+  }
+
+  .about-video iframe {
+    width: 90%; /* Растягиваем на всю ширину контейнера */
+    height: 250px; /* Автоматическая высота */
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .history-text {
+    flex: 1; /* Занимаем все доступное место слева */
+    font-size: 1.3em;
+    margin-right: 35px; /* Отступ справа от текста до изображений */
+    text-align: left; /* Выравниваем текст по левому краю */
+  }
+  
+  
+  .history-images {
+    flex: 1; /*  Занимаем все доступное место справа */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .history-image-pair {
+    display: flex;
+    justify-content: space-between;
+    width: 400px; /* Убираем ограничение ширины */
+  }
+  
+  .history-image-wrapper {
+    background-color: #3C182E;
+    border-radius: 15px;
+    padding: 13px;
+    max-width: 48%;
+  }
+  /*2 блок*/
+  .about-today {
+    max-width: 100%;
+    padding: 0 20px; /* Добавляем отступы по бокам */
+  }
+
+  .today-text {
+    font-size: 1.3em;
+    margin-bottom: 15px;
+  }
+
+  .today-images {
+    flex-direction: row; /* Возвращаем горизонтальное расположение */
+    justify-content: space-around; /* Равномерное распределение */
+  }
+
+  .today-image-wrapper {
+    width: 50%; /* Два элемента в ряд */
+    height: 280px; /* Уменьшаем высоту для средних экранов */
+    margin: 10px; /* Уменьшаем отступы */
+  }
+
+  .today-image {
+    border-radius: 12px; /* Уменьшаем радиус скругления */
+  }
+  /*3 блок*/
+  .about-video {
+    margin-top: 15px; /* Немного корректируем верхний отступ */
+    margin-bottom: 60px; /* Немного корректируем нижний отступ */
+  }
+
+  .about-video iframe {
+    width: 100%; /* Растягиваем на 80% ширины контейнера */
+    max-width: 800px; /* Задаем максимальную ширину */
+    height: 400px; /* Задаем высоту видео */
+  }
+}

@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'ШапкаЗаголовки';
+    src: url('/assets/fonts/KyivTypeTitling.woff2') format('woff2'),
+         url('/assets/fonts/KyivTypeTitling.woff') format('woff'),
+         url('/assets/fonts/KyivTypeTitling.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  /* пульсация кнопки меню 1 блок */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /*блеск кнопки*/
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: 200px 0;
+    }
+  }

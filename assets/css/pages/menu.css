@@ -1,0 +1,468 @@
+/* кнопки */
+.menu-navigation {
+  background-color: #E9E0DA; /* Цвет фона */
+  padding: 20px 0;
+  position: sticky; /* Фиксируем на месте при прокрутке */
+  top: 0;
+  z-index: 100; /*  чтобы всегда был поверх других элементов */
+}
+
+.menu-categories {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu-category-button {
+  font-family: 'ШапкаЗаголовки', sans-serif;
+  font-size: 1.2em;
+  color: white; /* Белый текст (по умолчанию) */
+  font-weight: bold;
+  border: 3px solid black;
+  padding: 10px 20px;
+  border-radius: 15px; /* Увеличиваем закругление */
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0 10px; /* Добавляем отступ между кнопками */
+  width: 240px; /* Фиксированная ширина */
+  text-align: center; /* Выравниваем текст по центру */
+  box-sizing: border-box; /*  Учитываем padding и border в общей ширине */
+  background-color: #FF4800; /* Оранжевый фон (по умолчанию) */
+}
+
+.menu-category-button:hover,
+.menu-category-button.active {
+  color: black;
+  background-color: transparent;
+  border: 3px solid black;
+}
+
+
+/*заголовок*/
+.menu-section-header {
+  padding-left: 15px;
+  margin-bottom: -10px;
+}
+
+/* Секции с товаром */
+.menu-section {
+  padding: 10px;
+  max-width: 1250px; /*  Ограничение ширины */
+  margin: 0 auto; /*  Центрирование */
+}
+
+.menu-section-title {
+  font-size: 2.4em;
+  font-weight: bold;
+}
+
+.menu-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: -10px; /* Компенсируем отступы */
+  margin-right: -10px; /* Компенсируем отступы */
+  cursor: pointer;
+}
+
+.menu-item {
+  width: calc(33.33% - 20px);
+  margin-bottom: -30px;
+  text-align: left; /* Выравниваем текст по левому краю */
+  padding: 0 10px;  /*  Добавляем отступы внутри элемента */
+  box-sizing: border-box; /*  Учитываем padding в ширине */
+  display: flex; /* Добавляем flex */
+  flex-direction: column; /*  Располагаем элементы в столбец */
+  justify-content: space-between; /* Растягиваем элементы по высоте */
+}
+
+.menu-item-image {
+  border-radius: 15px;
+  width: 100%;
+  height: 300px; /*  Уменьшаем размер фото */
+  object-fit: cover; /*  Сохраняем пропорции и обрезаем */
+  margin-bottom: -20px;
+}
+
+.menu-item-name {
+  font-size: 1.7em; 
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.menu-item-description {
+  font-size: 1.2em;
+  margin-bottom: -10px;
+  flex-grow: 1;
+}
+
+.menu-item-price {
+  font-size: 1.7em; /* Уменьшаем размер шрифта */
+  font-weight: bold;
+  color: #eb4504;
+}
+
+/* Модальное окно */
+.modal {
+  position: fixed; /* Фиксированное положение */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #F8F6F4;
+  
+  padding-top: 0px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 30px;
+  border: 1px solid #888;
+  max-width: 700px; /* Максимальная ширина */
+  border-radius: 10px;
+  position: relative; /* Для позиционирования кнопки закрытия */
+  display: flex;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 10px;
+  cursor: pointer;
+  font-size: 2.3em;
+}
+
+.modal-left-side {
+  width: 50%; /* Левая сторона с картинкой */
+  padding-right: 20px;
+}
+
+.modal-right-side {
+  width: 50%; /* Правая сторона с текстом */
+padding-left: 15px;
+}
+
+.modal-image {
+  border-radius: 15px;
+  width: 100%;
+  max-height: 300px; /* Ограничиваем высоту изображения */
+  object-fit: cover;
+  margin-top: 45px;
+}
+
+.modal-name {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: -13px;
+}
+
+.modal-weight {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.modal-description {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.modal-calories {
+  font-size: 1em;
+  color: #777;
+  margin-bottom: -13px;
+}
+.order-text {
+  font-size: 1.4em;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.order-images {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.order-image {
+  width: 140px; /* Настраиваем размер изображений */
+  height: auto;
+  border-radius: 5px;
+}
+
+.modal-price {
+  font-size: 1.7em; /* Уменьшаем размер шрифта */
+  font-weight: bold;
+  color: #eb4504;
+  text-align: left;
+}
+@media (max-width: 768px) {
+  .menu-navigation {
+    padding: 10px 0; /* Уменьшаем отступы */ 
+    z-index: 11;
+  }
+
+  .menu-categories {
+    flex-direction: row; /* Располагаем кнопки вертикально */
+    align-items: center; /* Центрируем кнопки */
+    flex-wrap: wrap;
+    
+  }
+
+  .menu-category-button {
+    font-size: 0.6em; /* Уменьшаем размер шрифта */
+    margin: 5px 0; /* Уменьшаем отступы */
+    width: 30%; /* Растягиваем на всю ширину экрана */
+    padding: 8px 15px; /* Уменьшаем внутренние отступы */
+  }
+  /*секции товаров*/
+  .menu-section {
+    padding: 5px; /* Уменьшаем отступы */
+  }
+
+  .menu-section-title {
+    font-size: 1.8em; /* Уменьшаем размер шрифта */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .menu-items {
+    flex-direction: column; /* Располагаем элементы вертикально */
+    margin-left: 0; /* Убираем компенсацию отступов */
+    margin-right: 0; /* Убираем компенсацию отступов */
+  }
+
+  .menu-item {
+    width: 97%; /* Растягиваем на всю ширину */
+    margin-bottom: 20px;
+    padding-left: 20px;
+    text-align: center;
+  }
+
+  .menu-item-image {
+    height: 190px; /* Уменьшаем высоту */
+    width: 90%;
+    margin-left: 23px;
+    border-radius: 10px;
+  }
+
+  .menu-item-name {
+    font-size: 1.4em; /* Уменьшаем размер шрифта */
+    margin-bottom: -2px;
+  }
+
+  .menu-item-description {
+    font-size: 1.1em; /* Уменьшаем размер шрифта */
+    margin-bottom: -2px;
+  }
+
+  .menu-item-price {
+    font-size: 1.4em; /* Уменьшаем размер шрифта */
+  }
+  /*модальное*/
+  .modal-content {
+    flex-direction: column; /* Располагаем элементы вертикально */
+    padding: 15px; /* Уменьшаем отступы */
+    max-width: 80%; /* Растягиваем на ширину экрана */
+  }
+
+  .close {
+    font-size: 1.8em; /* Уменьшаем размер шрифта */
+    padding-right: 5px;
+  }
+
+  .modal-left-side {
+    width: 100%; /* Растягиваем картинку на всю ширину */
+  }
+
+  .modal-right-side {
+    width: 100%; /* Растягиваем текст на всю ширину */
+    padding-left: 0; /* Убираем отступ слева */
+  }
+
+  .modal-image {
+    max-height: 200px; /* Уменьшаем высоту картинки */
+    margin-top: 10px;
+  }
+
+  .modal-name {
+    font-size: 1.4em; /* Уменьшаем размер шрифта */
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .modal-weight {
+    font-size: 0.9em; /* Уменьшаем размер шрифта */
+    margin-bottom: 5px;
+    text-align: center;
+  }
+
+  .modal-description {
+    font-size: 1.1em; /* Уменьшаем размер шрифта */
+    margin-bottom: 5px;
+  }
+
+  .modal-calories {
+    font-size: 0.9em; /* Уменьшаем размер шрифта */
+    margin-bottom: 5px;
+  }
+
+  .order-text {
+    font-size: 1.2em; /* Уменьшаем размер шрифта */
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .order-images {
+    display: flex;
+    justify-content: center; /* Выравниваем изображения по центру */
+    gap: 20px; /* Устанавливаем расстояние между изображениями */
+    margin-bottom: 10px;
+  }
+
+  .order-image {
+    width: 120px; /* Уменьшаем размер изображений */
+  }
+
+  .modal-price {
+    font-size: 1.4em; /* Уменьшаем размер шрифта */
+    text-align: center;
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+    .menu-navigation {
+      padding: 10px 0; /* Уменьшаем отступы */
+      z-index: 11;
+    }
+  
+    .menu-categories {
+      flex-direction: row; /* Располагаем кнопки в строку */
+      justify-content: center; /* Центрируем кнопки по горизонтали */
+      flex-wrap: wrap; /* Разрешаем перенос на новую строку */
+      align-items: flex-start; /* Выравниваем кнопки по верхнему краю, если они переносятся */
+    }
+  
+    .menu-category-button {
+      font-size: 0.9em; /* Уменьшаем размер шрифта */
+      margin: 5px 10px; /* Уменьшаем отступы по бокам и чуть больше по бокам */
+      width: calc(30% - 20px); /* Рассчитываем ширину с учетом отступов */
+      min-width: 150px; /* Минимальная ширина, чтобы кнопки не сжимались слишком сильно */
+      padding: 8px 15px; /* Уменьшаем внутренние отступы */
+    }
+    /*секции*/
+    .menu-section {
+    padding: 10px;
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+  .menu-section-title {
+    font-size: 1.9em;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+  .menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+  .menu-item {
+    width: calc(50% - 20px);
+    margin-bottom: 30px;
+    text-align: left;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .menu-item-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 0;
+    border-radius: 10px;
+  }
+  .menu-item-name {
+    font-size: 1.3em;
+    margin-bottom: 5px;
+  }
+  .menu-item-description {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+  }
+  .menu-item-price {
+    font-size: 1.4em;
+  }
+}
+@media (min-width: 993px) {
+  .menu-navigation {
+    padding: 20px 0;
+    z-index: 100;
+  }
+
+  .menu-categories {
+    justify-content: space-around;
+    flex-wrap: nowrap; /* Запрещаем перенос кнопок */
+  }
+
+  .menu-category-button {
+    font-size: 1.2em;
+    margin: 0 10px;
+    width: auto; /* Автоматическая ширина */
+    padding: 10px 20px;
+  }
+  /*секции*/
+  .menu-section {
+    padding: 20px;
+  }
+
+  .menu-section-title {
+    font-size: 2.4em;
+    text-align: left;
+    margin-bottom: 30px;
+  }
+
+  .menu-items {
+    justify-content: space-around; /* Равномерное распределение элементов */
+  }
+
+  .menu-item {
+    width: 33%;
+    margin-bottom: 50px;
+    padding: 0 10px;
+  }
+
+  .menu-item-image {
+    height: 300px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+  }
+
+  .menu-item-name {
+    font-size: 1.7em;
+    margin-bottom: 10px;
+  }
+
+  .menu-item-description {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  .menu-item-price {
+    font-size: 1.7em;
+  }
+}
+
+
+

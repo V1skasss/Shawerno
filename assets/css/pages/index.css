@@ -1,0 +1,805 @@
+  /*1blok*/
+  .first-block {
+    background-image: url('/1blok.webp');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+    color: #fff;
+    position: relative; /* Важно: делаем блок позиционированным, чтобы псевдоэлемент был относительно него */
+    overflow: hidden; /* Скрываем все, что выходит за границы блока */
+  }
+  
+  .first-block::before {
+    content: ''; /* Обязательно для псевдоэлемента */
+    position: absolute; /* Абсолютно позиционируем псевдоэлемент */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #131212; /* Цвет прямоугольника */
+    opacity: 0.5;
+    z-index: 1; /* Помещаем прямоугольник поверх фонового изображения */
+  }
+  
+  .first-block-content {
+    position: relative; /* Важно: делаем контент позиционированным, чтобы он был поверх прямоугольника */
+    z-index: 2; /* Помещаем контент поверх прямоугольника */
+  }
+  
+  .first-block-content h1 {
+    font-size: 4em;
+    margin: 35px 0;
+  }
+  
+  .menu-button {
+    background-color: #EB4200;
+    color: #fff;
+    font-size: 21px;
+    border: 3px solid white; /* Добавляем белую обводку толщиной 2px */
+    font-weight: bold; /* Делаем шрифт жирным */
+    border-radius: 15px;
+    padding: 10px 65px; /* padding после border, т.к. padding может "съедать" border */
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    animation: pulse 2s infinite; /* Запускаем анимацию "pulse"*/
+  }
+  
+  .menu-button:hover {
+    background-color: #C4421B
+  }
+  
+
+  /* Блок О нас */
+.section { /*для всех заголовков*/
+    background-color: #E9E0DA;
+    padding-top: 10px;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  
+  .title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 1370px;
+    height: 3px;
+    background-color: #000;
+    transform: translateX(-50%);
+  }
+  
+  /* Контейнер для всего блока "О нас" */
+  .container {
+    display: flex;
+    align-items: center;
+    max-width: 1250px; /* Ограничиваем ширину контента */
+    margin: 0 auto; /* Центрируем по горизонтали */
+  }
+  
+  /* Стили для текста */
+  .about-content {
+    font-size: 30px;
+    text-align: left;
+    font-family: sans-serif;
+    color: #000; /*  Черный текст для фона #E9E0DA */
+    flex: 1; /* Занимает большую часть доступного пространства */
+    padding-right: 30px; /* Отступ справа от текста */
+  }
+  
+  .about-content p span {
+    color: #EB4200;
+  }
+  
+  /* Стили для картинки */
+  .about-image {
+    border-radius: 15px;
+    overflow: hidden;
+    width: 35%; /*  Занимает ширины контейнера */
+    background-color: #391A2D; /*  Фон для картинки */
+    padding: 17px; /*  Отступы вокруг картинки внутри контейнера */
+    box-sizing: border-box; /*  Чтобы padding не увеличивал общую ширину */
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+  }
+  
+  /* Кнопка "Читать подробнее" */
+  .read-more-button {
+    background-color: #391A2D;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #fff;
+    border: none;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    font-weight: bolder;
+    font-family: 'ШапкаЗаголовки', sans-serif;
+    font-size: 23px; /* Уменьшаем шрифт здесь */
+    width: 230px; /* Фиксированная ширина кнопки */
+    height: 30px; /* Фиксированная высота кнопки */
+    display: flex;         /* Включаем флекс */
+    justify-content: center; /* Выравниваем по горизонтали */
+    align-items: center;  
+  }
+  
+  .read-more-button:hover {
+    background-color: #5a2746;
+  }
+
+ /*для акций*/
+.actions-container {
+  display: flex;
+  flex-direction: column; /* Выстраиваем элементы по вертикали */
+  align-items: center; /* Центрируем элементы по горизонтали */
+  cursor: pointer;
+}
+
+.actions-container .actions-wrapper { /* Используем дочерний селектор */
+  display: flex;
+  justify-content: space-around; /* Равномерное распределение акций */
+  width: 100%; /* Занимает всю ширину actions-container */
+}
+
+.actions-container .disclaimer { /* Используем дочерний селектор */
+  font-size: 1.2em;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  color: #888;
+  width: 100%; /* Чтобы дисклеймер занимал всю ширину actions-container */
+}
+
+/* Модальное окно */
+.actions-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  z-index: 1000; /*  Чтобы модальное окно было поверх всего */
+}
+
+.actions-modal-content {
+  background-color: #f8f6f4;
+  padding-top: 0px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 30px;
+  border: 1px solid #888;
+  max-width: 700px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+}
+
+.actions-modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 10px;
+  cursor: pointer;
+  font-size: 2.3em;
+}
+
+.actions-modal-left-side {
+  width: 50%;
+  padding-right: 20px;
+}
+
+.actions-modal-right-side {
+  width: 50%;
+  padding-left: 15px;
+}
+
+.actions-modal-image {
+  border-radius: 15px;
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  margin-top: 45px;
+  margin-bottom: 13px;
+}
+
+.actions-modal-name {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: -13px;
+}
+.actions-modal-weight {
+  font-size: 1em;
+  text-align: left;
+  color: #777;
+  margin-bottom: 10px;
+}
+
+.actions-modal-description {
+  font-size: 1.3em;
+  margin-bottom: 10px;
+}
+
+.actions-modal-price {
+  font-size: 1.7em; /*  Подстраиваем под твой стиль */
+  font-weight: bold;
+  color: #eb4504;
+  text-align: left;
+}
+
+
+  /* Блок галерея */
+.gallery-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1370px;
+  margin: 0 auto;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  gap: 60px; /* Уменьшаем расстояние между фото */
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  width: 290px; /* Уменьшаем ширину для ячейки */
+  height: 250px; /* Уменьшаем высоту для ячейки */
+}
+
+.gallery-item img {
+  border-radius: 15px;
+  border: 3px solid black;
+  transition: transform 0.3s ease; /* Плавное приближение */
+  width: 100%; /* Растягиваем фото на всю ячейку */
+  height: 100%; /* Растягиваем фото на всю ячейку */
+  object-fit: cover; /* Обрезаем фото, чтобы сохранить пропорции */
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1); /* Приближение при наведении */
+}
+
+/* Стили для модального окна галереи */
+.gallery-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); /* Затемненный фон */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Поверх всего контента */
+}
+
+.gallery-modal-content {
+  position: relative;
+  background-color: #e9e0da; /* Цвет фона */
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 90%; /* Ограничиваем ширину */
+  max-height: 90%; /* Ограничиваем высоту */
+  overflow: auto; /* Если контент не помещается */
+}
+
+.gallery-modal-close {
+  position: absolute;
+  top: -2px;
+  right: 7px;
+  font-size: 2.3em;
+  cursor: pointer;
+  color: #333; /* Цвет крестика */
+}
+
+.gallery-modal-image {
+  max-width: 100%;
+  max-height: 550px; /* Ограничиваем высоту картинки */
+  object-fit: contain; /* Чтобы картинка помещалась в контейнер */
+}
+  
+  /*работа*/
+  .work-container {
+    margin-top: 20px;
+    display: flex;
+    background-color: #391A2D;
+    border-radius: 15px;
+    padding: 20px 20px 20px 20px;
+    align-items: center;
+    justify-content: space-between; /* Added to distribute space evenly */
+  }
+  
+  .work-content {
+    flex: 1; 
+    color: white; 
+  }
+  
+  .work-title {
+    font-size: 3.7em;
+    margin-bottom: 10px;
+    margin-top: -40px;
+    margin-left: 110px;
+  }
+  
+  .work-salary {
+    font-size: 2.5em;
+    margin-left: 110px;
+    color: #FF4800;
+    font-weight: bold;
+    text-shadow: -2px -2px 0 #fff, 1px -1px 0 #fff, -1px  1px 0 #fff, 1px  1px 0 #fff,-1px 0px 0 #fff, 1px 0px 0 #fff, 0px -1px 0 #fff, 0px 2px 0 #fff;
+    margin-bottom: 70px;
+  }
+
+  .work-button {
+    background: linear-gradient(90deg, #FF4800, #FF7043, #FF4800);
+    background-size: 400px;
+    margin-left: 110px;
+    color: white;
+    border: 2px solid white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 15px;
+    font-size: 1.5em;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    font-family: 'ШапкаЗаголовки', sans-serif;
+    font-weight: bold;
+    animation: shimmer 1.5s linear infinite;
+  }
+  
+  .work-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(255, 72, 0, 0.7);
+    
+  }
+
+  .work-image {
+    flex: 1; 
+    display: flex;
+    justify-content: right; 
+  }
+  
+  .work-image img {
+    width: 70%; 
+    border-radius: 15px;
+    max-width: 500px; 
+  }
+
+/* Блок "Тайный гость" */
+.secret-guest-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  padding-top: 20px;
+  max-width: 100%; /* Подстраиваем ширину под контент */
+  margin: 0 auto; /* Выравниваем по центру */
+}
+
+.secret-guest-image {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 100%; /* Ограничиваем размер картинки внутри контейнера */
+  margin-bottom: 20px; /* Расстояние между картинкой и кнопкой */
+  align-items: center;
+}
+
+/* Для маленьких экранов (максимальная ширина 768px) */
+@media (max-width: 768px) {
+  .first-block {
+    padding: 50px 0; /* Еще больше уменьшаем padding */
+  }
+
+  .first-block-content h1 {
+    font-size: 2em; /* Еще больше уменьшаем размер шрифта */
+    margin: 15px 0; /* Еще больше уменьшаем отступы */
+  }
+
+  .menu-button {
+    font-size: 16px; /* Еще больше уменьшаем размер шрифта */
+    padding: 6px 35px; /* Еще больше уменьшаем отступы */
+  }
+
+  /* о нас */
+  .section {
+    padding-top: 5px; /* Уменьшаем отступ сверху */
+  }
+
+  .title {
+    font-size: 2em; /* Уменьшаем размер шрифта для заголовка */
+    margin-bottom: 5px; /* Уменьшаем отступ снизу для заголовка */
+    padding-bottom: 5px; /* Уменьшаем отступ снизу для заголовка */
+  }
+
+  .title::after {
+    width: 430px; /* Растягиваем линию на всю ширину */
+  }
+
+  .container {
+    flex-direction: column; /* Вертикальное расположение элементов */
+    align-items: center; /* Центрируем элементы по горизонтали */
+  }
+
+  .about-content {
+    font-size: 1.2em; /* Уменьшаем размер шрифта для текста */
+    text-align: center; /* Выравниваем текст по центру */
+    padding-right: 0; /* Убираем отступ справа */
+  }
+
+  .about-image {
+    width: 70%; /* Растягиваем картинку на 80% ширины */
+    padding: 10px; /* Уменьшаем отступ внутри блока */
+    margin-top: 5px; /* Добавляем отступ сверху */
+  }
+
+  .read-more-button {
+    font-size: 18px; /* Уменьшаем размер шрифта для кнопки */
+    padding: 8px 7px; /* Уменьшаем отступы внутри кнопки */
+    margin-bottom: 20px; /* Уменьшаем отступ снизу */
+    height: auto; /* Убираем фиксированную высоту */
+    margin-left: auto;  /* Добавляем автоматический отступ слева */
+    margin-right: auto; /* Добавляем автоматический отступ справа */
+  }
+/* акции */
+  .actions-container .actions-wrapper {
+    flex-direction: column; /* Вертикальное расположение элементов */
+    align-items: center; /* Центрируем элементы по горизонтали */
+  }
+
+  .actions-container .disclaimer {
+    font-size: 1.2em; /* Уменьшаем размер шрифта для дисклеймера */
+    margin-top: 5px; /* Уменьшаем верхний отступ */
+  }
+
+  .actions-modal-content {
+    flex-direction: column; /* Располагаем элементы модального окна вертикально */
+    padding-left: 27px;
+    padding-right: 15px; /* Уменьшаем отступы */
+    max-width: 50%; /* Модальное окно занимает 90% ширины */
+  }
+
+  .actions-modal-close {
+    font-size: 1.8em; /* Уменьшаем размер шрифта для кнопки закрытия */
+    top: 1px;
+    right: -4px; /* Меняем позиционирование кнопки закрытия */
+  }
+
+  .actions-modal-left-side {
+    width: 95%; /* Картинка занимает всю ширину */
+  }
+
+  .actions-modal-right-side {
+    width: 100%; /* Текст занимает всю ширину */
+    padding-left: 0; /* Убираем отступ слева */
+  }
+
+  .actions-modal-image {
+    max-height: 210px; /* Ограничиваем высоту картинки */
+    margin-top: 15px; /* Увеличиваем отступ сверху */
+  }
+
+  .actions-modal-name {
+    font-size: 1.5em; /* Уменьшаем размер шрифта для названия */
+    margin-bottom: -8px;
+    margin-top: -2px;
+  }
+
+  .actions-modal-weight {
+    font-size: 0.9em; /* Уменьшаем размер шрифта для веса */
+  }
+
+  .actions-modal-description {
+    font-size: 1.1em; /* Уменьшаем размер шрифта для описания */
+  }
+
+  .actions-modal-price {
+    font-size: 1.4em; /* Уменьшаем размер шрифта для цены */
+  }
+  /* галерея */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Одна колонка на маленьких экранах */
+    gap: 20px; /* Уменьшаем расстояние между фото */
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .gallery-item {
+    width: 95%; /* Ячейка занимает всю ширину */
+    height: auto; /* Автоматическая высота */
+  }
+
+  .gallery-modal-content {
+    padding: 20px; /* Уменьшаем отступы внутри модального окна */
+  }
+
+  .gallery-modal-close {
+    font-size: 1.8em; /* Уменьшаем размер шрифта для крестика */
+    top: -2px;
+    right: 4px; /* Меняем позиционирование */
+  }
+
+  .gallery-modal-image {
+    max-height: 350px; /* Уменьшаем высоту изображения */
+  }
+  /* работа */
+  .work-container {
+    flex-direction: column; /* Располагаем элементы вертикально */
+    align-items: center;    /* Центрируем элементы по горизонтали */
+    text-align: center;     /* Выравниваем текст по центру */
+  }
+
+  .work-content {
+    text-align: center; /* Выравниваем текст по центру */
+  }
+
+  .work-title {
+    font-size: 2em; /* Уменьшаем размер шрифта */
+    margin: 10px 0;      /* Убираем отступы и задаем новые */
+  }
+
+  .work-salary {
+    font-size: 1.7em; /* Уменьшаем размер шрифта */
+    margin: 20px 0 40px;       /* Убираем отступы и задаем новые */
+  }
+
+  .work-button {
+    margin: 0;           /* Убираем отступы */
+    font-size: 1em;   /* Уменьшаем размер шрифта */
+  }
+
+  .work-image {
+    display: flex;
+    justify-content: center; /* Центрируем картинку */
+  }
+
+  .work-image img {
+   
+    width: 100%;       /* Чтобы картинка не выходила за границы контейнера */
+    margin: 0 auto;  /* Центрируем картинку по горизонтали */
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  /*гость*/
+  .secret-guest-wrapper {
+    padding-top: 10px; /* Уменьшаем отступ сверху */
+  }
+
+  .secret-guest-image {
+    border-radius: 10px; /* Уменьшаем радиус скругления */
+    margin-bottom: 10px; /* Уменьшаем отступ снизу */
+  }
+}
+  /*планшет*/
+  @media (min-width: 769px) and (max-width: 992px) {
+  .first-block {
+    padding: 70px 0; /* Восстанавливаем padding */
+  }
+
+  .first-block-content h1 {
+    font-size: 3em; /* Восстанавливаем размер шрифта */
+    margin: 25px 0; /* Восстанавливаем отступы */
+  }
+
+  .menu-button {
+    font-size: 18px; /* Восстанавливаем размер шрифта */
+    padding: 8px 50px; /* Восстанавливаем отступы */
+  }
+  /*о нас*/
+  .section {
+    padding: 5px 0; /* Adjust padding */
+  }
+
+  .title {
+    font-size: 2.5em; /* Adjust font size */
+    margin-bottom: 20px; /* Adjust margin */
+    padding-bottom: 10px;
+  }
+
+  .title::after {
+    width: 770px; /* Adjust line width */
+  }
+
+  .container {
+    flex-direction: row; /* Revert to row */
+    align-items: center; /* Revert to horizontal alignment */
+  }
+
+  .about-content {
+    font-size: 1.3em; /* Adjust font size */
+    text-align: left; /* Revert to left alignment */
+    padding-right: 20px; /* Add some padding */
+  }
+
+  .about-image {
+    width: 40%; /* Adjust image width */
+    padding: 15px;
+    margin-top: 0; /* Remove top margin */
+  }
+
+  .read-more-button {
+    font-size: 19px; /* Adjust font size */
+    padding: 10px 20px; /* Adjust padding */
+    margin-bottom: 30px;
+    height: auto;
+  }
+  /*акции*/
+  .actions-container .actions-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .actions-container .disclaimer {
+    width: 100%;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 15px;
+  }
+
+  .actions-modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .actions-modal-content {
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 13px;
+    border-radius: 10px;
+    display: flex;
+    max-width: 75%;
+    max-height: 75%;
+    overflow: auto;
+  }
+
+  .actions-modal-close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.7em;
+    cursor: pointer;
+    color: #666;
+  }
+
+  .actions-modal-left-side {
+    flex: 1;
+    text-align: center;
+    padding-right: 15px;
+  }
+
+  .actions-modal-right-side {
+    flex: 1;
+    padding-left: 15px;
+  }
+
+  .actions-modal-image {
+    max-width: 100%;
+    max-height: 280px;
+    border-radius: 5px;
+    margin-bottom: 0;
+  }
+
+  .actions-modal-name {
+    font-size: 1.6em;
+    margin-bottom: 5px;
+  }
+
+  .actions-modal-weight {
+    color: #666;
+    margin-bottom: 5px;
+  }
+
+  .actions-modal-description {
+    font-size: 1.1em;
+    color: #333;
+    line-height: 1.5;
+  }
+
+  .actions-modal-price {
+    font-size: 1.4em;
+    color: #EB4200;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  /*работа*/
+  .work-container {
+    flex-direction: row; /* Восстанавливаем горизонтальное расположение */
+    align-items: center;
+    text-align: left;
+    padding: 15px;
+  }
+
+  .work-content {
+    text-align: left;
+  }
+
+  .work-title {
+    font-size: 2.3em; /* Уменьшаем размер шрифта для заголовка */
+    margin: -14px 0 5px 20px; /* Немного корректируем отступы */
+  }
+
+  .work-salary {
+    font-size: 1.7em; /* Уменьшаем размер шрифта для зарплаты */
+    margin: 15px 0 30px 20px; /* Корректируем отступы */
+  }
+
+  .work-button {
+    font-size: 1.2em;   /* Уменьшаем размер шрифта для кнопки */
+    margin-left: 20px; /* Добавляем небольшой отступ слева */
+    padding: 10px 20px;
+  }
+
+  .work-image {
+    justify-content: flex-end; /* Картинка прижимается к правому краю */
+  }
+
+  .work-image img {
+    width: 80%;
+    max-width: 300px; /* Задаем максимальную ширину для картинки */
+    margin: 0;
+    border-radius: 10px;
+  }
+  /*галерея*/
+.gallery {
+    grid-template-columns: repeat(2, 1fr); /* Одна колонка на маленьких экранах */
+    gap: 20px; /* Уменьшаем расстояние между фото */
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+
+  .gallery-item {
+    width: 95%; /* Ячейка занимает всю ширину */
+    height: auto; /* Автоматическая высота */
+  }
+
+    .gallery-modal-content {
+      padding: 25px;
+    }
+
+  .gallery-modal-close {
+    font-size: 2em;
+    top: -1px;
+    right: 5px;
+  }
+
+  .gallery-modal-image {
+    max-height: 450px;
+  }
+}
+
+
+
+
+
+
+

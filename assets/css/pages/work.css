@@ -1,0 +1,349 @@
+/*1blok*/
+.vacancies {
+    display: flex;
+    justify-content: space-between; /* Равномерное распределение вакансий */
+    max-width: 1250px;
+    margin: 0 auto;
+  }
+  
+  .vacancy-item {
+    width: calc(33.33% - 20px); /* Чтобы 3 вакансии помещались в ряд */
+    margin-bottom: 30px;
+    margin-top: 20px;
+  }
+  
+  .vacancy-image-container {
+    position: relative; /* Для позиционирования overlay */
+    border-radius: 15px;
+    overflow: hidden; /* Обрезаем изображение по краям */
+    height: 400px; /*  Задаем высоту для контейнера */
+  }
+  
+  .vacancy-image {
+    width: 100%;
+    display: block; /* Убираем небольшой отступ под изображением */
+    border-radius: 15px;
+  }
+  
+  .vacancy-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1D1B1B;
+    opacity: 0.84;
+    border-radius: 15px;
+  }
+  
+  .vacancy-title {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FF4800;
+    color: white;
+    font-size: 1.4em;
+    font-family: 'ШапкаЗаголовки', sans-serif;
+    font-weight: bold;
+    width: 260px;  /* Фиксированная ширина */
+    height: 45px; /* Фиксированная высота */
+    line-height: 42px; /* Центрируем текст по вертикали */
+    padding: 0; /* Убираем padding */
+    white-space: nowrap;
+    border: 2px solid white;
+    border-radius: 15px;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  .vacancy-description {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-left: 50px;
+    color: white;
+    text-align: left;
+    z-index: 1;
+    width: 80%; /*  Ограничиваем ширину */
+    height: 37%;
+}
+  
+  .vacancy-description li {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    line-height: 1.2;
+  }
+
+/*2 блок */
+.job-item {
+  display: flex;
+  margin-bottom: 30px;
+  align-items: center;
+}
+.job-number {
+  font-size: 3em;
+  color: #ff6a2f;
+  font-weight: bold;
+  margin-right: 35px; /* Уменьшаем отступ */
+  margin-left: 25px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.job-text {
+  font-size: 2em;
+  line-height: 1.9;
+  white-space: nowrap; /* Запрещаем перенос текста */
+}
+
+.work-image {
+  flex: 1; /* Занимает доступное пространство */
+  display: flex;
+  justify-content: right;
+}
+
+.job-image { /* Изменил класс */
+  border-radius: 15px;
+  margin-right: 15px;
+}
+
+/*текст под*/
+.contact-section {       
+  max-width: 1250px;
+  margin: 0 auto;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
+
+.contact-text {
+  font-size: 1.9em;
+  text-align: center;
+  margin-bottom: -40px;
+  margin-top: 50px;
+  line-height: 1.5;
+}
+.shaverno-text {
+  color: #EB4200;
+}
+.contact-blocks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+p.contact-block {
+  margin-bottom: 0px; /*  небольшой отступ между блоками */
+ }
+.contact-block {
+  background-color: #EB4200;
+  color: white;
+  font-size: 1.6em;
+  padding: 15px 30px;
+  border-radius: 15px;
+  text-align: center;
+  width: fit-content;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+.black-text {
+  color: black;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .vacancies {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vacancy-item {
+    width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .vacancy-image-container {
+    height: 390px;
+  }
+
+  .vacancy-title {
+    font-size: 1.2em;
+    width: 80%;
+    height: auto;
+    line-height: 1.2;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px; /* Добавляем отступ снизу */
+  }
+
+  .vacancy-description {
+    color: rgb(255, 255, 255);
+    padding: 0;
+    font-size: 1.2em;
+    width: 60%;
+    height: auto;
+    margin-top: 10px; /* Добавляем отступ сверху (альтернативный способ) */
+  }
+
+  .vacancy-description li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  /*2 блок*/
+  .job-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .job-number {
+    font-size: 2em;
+    margin: 0 auto 10px;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+  }
+
+  .job-text {
+    font-size: 1.3em;
+    line-height: 1.4;
+    white-space: normal;
+  }
+
+  .work-image {
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .job-image {
+    max-width: 80%; /* Ограничиваем ширину */
+    margin-right: 0;
+  }
+  /*текст под*/
+  .contact-section {
+    margin-top: 20px;
+    margin-bottom: 30px;
+  }
+
+  .contact-text {
+    font-size: 1.4em;
+    margin-bottom: -20px;
+    margin-top: 30px;
+    line-height: 1.3;
+  }
+
+  .contact-blocks {
+    margin-top: 10px;
+  }
+
+  .contact-block {
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+@media (min-width: 769px) and (max-width: 992px) {
+  .vacancies {
+    flex-direction: row; /* Возвращаем горизонтальное расположение */
+    flex-wrap: wrap; /* Разрешаем перенос на новую строку */
+    justify-content: space-around; /* Равномерно распределяем элементы */
+    align-items: stretch; /* Растягиваем элементы по высоте */
+  }
+
+  .vacancy-item {
+    width: calc(50% - 20px); /* 2 элемента в ряд с учетом отступов */
+    margin-bottom: 20px;
+  }
+
+  .vacancy-image-container {
+    height: 250px; /* Высота изображения */
+  }
+
+  .vacancy-title {
+    font-size: 1em; /* Размер шрифта */
+    padding: 5px;
+    width: 80%;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  .vacancy-description {
+    position: absolute;
+    bottom: 20px; /* Расположение внизу */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+    padding: 0px 10px;
+  }
+
+  .vacancy-description li {
+    font-size: 1em;
+    line-height: 1.2;
+  }
+  /*работа*/
+  .job-item {
+    margin-bottom: 20px;
+  }
+
+  .job-number {
+    font-size: 2.9em;
+    margin-left: 15px;
+    margin-right: 20px;
+    text-shadow: -1.5px -1.5px 0 white, 1.5px -1.5px 0 white, -1.5px 1.5px 0 white, 1.5px 1.5px 0 white;
+  }
+
+  .job-text {
+    font-size: 1.5em;
+    line-height: 1.6;
+    white-space: normal;
+  }
+  /*текст под*/
+  .contact-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .contact-text {
+    font-size: 1.6em;
+    margin-top: 30px;
+    line-height: 1.4;
+  }
+
+  .contact-block {
+    font-size: 1.4em;
+    padding: 12px 25px;
+    border-radius: 12px;
+    box-shadow: 2.5px 2.5px 4px rgba(0, 0, 0, 0.4);
+  }
+}
+@media (min-width: 993px) {
+  .vacancies {
+    flex-direction: row; /* Возвращаем строку */
+    justify-content: space-between; /* Равномерное распределение */
+  }
+
+  .vacancy-image-container {
+    height: 330px; /* Восстанавливаем высоту */
+  }
+
+  .vacancy-title {
+    font-size: 1.4em; /* Восстанавливаем размер шрифта */
+    width: 260px;
+    height: 45px;
+  }
+
+  .vacancy-description {
+    font-size: 1.3em; 
+  }
+
+  .vacancy-description li {
+    font-size: 1.2em;
+    line-height: 1.4;
+  }
+}
