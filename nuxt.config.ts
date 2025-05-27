@@ -16,13 +16,6 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/webp', href: '/logoURL.webp' }
-      ],
-    script: [  
-        {
-          src: 'https://api-maps.yandex.ru/2.1/?apikey=e7059ba3-c662-40aa-a1ca-0cbc82eafa22&lang=ru_RU"></script>',
-          async: true,
-          defer: true
-        }
       ]
     }
   }
