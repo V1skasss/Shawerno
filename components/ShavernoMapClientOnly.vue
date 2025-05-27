@@ -8,9 +8,23 @@
 import { onMounted, ref } from 'vue';
 
 const isClient = ref(false); // Добавляем реактивную переменную
+const apiKey = 'e7059ba3-c662-40aa-a1ca-0cbc82eafa22';
 
 onMounted(() => {
-  isClient.value = true; // Устанавливаем в true после монтирования
+  isClient.value = true;
+  loadYmaps();
+});
+
+const loadYmaps = () => {
+  if (typeof window !== 'undefined') {
+    const script = document.createElement('script');
+    script.src = `https://api-maps.yandex.ru/2.1/?apikey=${apiKey}&lang=ru_RU`;
+    script.onload = initMap;
+    document.head.appendChild(script);
+  }
+};
+
+const initMap = () => {
   ymaps.ready(() => {
     const map = new ymaps.Map('map', {
       center: [60.02553, 30.35123],
@@ -51,7 +65,7 @@ onMounted(() => {
       map.geoObjects.add(placemark);
     });
   });
-});
+};
 </script>
 
 <style scoped>
