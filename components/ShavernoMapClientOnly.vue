@@ -1,14 +1,17 @@
 <template>
- <div class="map-container">
-  <div id="map"></div>
-</div>
+  <div v-if="isClient" class="map-container">
+    <div id="map"></div>
+  </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
+import { onMounted, ref } from 'vue';
+
+const isClient = ref(false); // Добавляем реактивную переменную
 
 onMounted(() => {
-  ymaps.ready(() => { // Теперь ymaps должен быть доступен
+  isClient.value = true; // Устанавливаем в true после монтирования
+  ymaps.ready(() => {
     const map = new ymaps.Map('map', {
       center: [60.02553, 30.35123],
       zoom: 12,
@@ -43,7 +46,7 @@ onMounted(() => {
       const placemark = new ymaps.Placemark([location.lat, location.lng], {
         balloonContent: `<b>${location.name}</b>`
       }, {
-        iconColor: '#EB4200' 
+        iconColor: '#EB4200'
       });
       map.geoObjects.add(placemark);
     });
@@ -52,23 +55,24 @@ onMounted(() => {
 </script>
 
 <style scoped>
- /* Контейнер с картой */
+/* Контейнер с картой */
 .map-container {
-  position: relative;         
-  width: 100%;            
-  padding-bottom: 45%;                  
-  overflow: hidden;           
+  position: relative;
+  width: 100%;
+  padding-bottom: 45%;
+  overflow: hidden;
 }
 
 #map {
-  position: absolute;   
+  position: absolute;
+  
 }
 
-  .ymaps-2-1-79-balloon__content {
-    font-size: 16px;  /* Задаем размер шрифта по умолчанию */
-  }
+.ymaps-2-1-79-balloon__content {
+  font-size: 16px;  /* Задаем размер шрифта по умолчанию */
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
   /* Адаптация контейнера под телефоны и планшеты */
   .map-container {
     padding-bottom: 70%; /* Изменяем соотношение сторон для экранов поменьше (4:3) */
