@@ -79,7 +79,8 @@ const initMap = () => {
 
 #map {
   position: absolute;
-  
+  width: 100%; /* Добавлено */
+  height: 100%; /* Добавлено */
 }
 
 .ymaps-2-1-79-balloon__content {
