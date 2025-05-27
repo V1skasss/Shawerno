@@ -29,7 +29,7 @@
         <div
           v-for="slide in slides"
           :key="slide.id"
-          :class="styles.carousel__item"
+          class="action-item" 
           @click="openModal(slide)" >
           <img :src="slide.image" :alt="slide.title" />
           <h3>{{ slide.title }}</h3>
@@ -113,12 +113,24 @@
       </div>
     </section>
   </div>
+
+  <section class="section">
+    <h2 class="title">Наши адреса</h2>
+    <div class="container">
+      <ClientOnly>  <!-- Оборачиваем компонент в ClientOnly -->
+        <ShavernoMapClientOnly />
+        <template #fallback>
+          <div>Загрузка карты...</div>  <!-- Отображается во время SSR -->
+        </template>
+      </ClientOnly>
+    </div>
+  </section>
 </template>
 
 <script setup>
 import { ref } from 'vue';
-import styles from 'assets/css/carousel.module.css';
 import 'assets/css/pages/index.css';
+import ShavernoMapClientOnly from '~/components/ShavernoMapClientOnly.vue';
 
 
 const slides = ref([

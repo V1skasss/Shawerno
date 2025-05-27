@@ -1,80 +1,86 @@
 /*1blok*/
 .vacancies {
-    display: flex;
-    justify-content: space-between; /* Равномерное распределение вакансий */
-    max-width: 1250px;
-    margin: 0 auto;
-  }
+  display: flex;
+  justify-content: space-between; /* Равномерное распределение вакансий */
+  margin: 0 auto;
   
-  .vacancy-item {
-    width: calc(33.33% - 20px); /* Чтобы 3 вакансии помещались в ряд */
-    margin-bottom: 30px;
-    margin-top: 20px;
-  }
-  
-  .vacancy-image-container {
-    position: relative; /* Для позиционирования overlay */
-    border-radius: 15px;
-    overflow: hidden; /* Обрезаем изображение по краям */
-    height: 400px; /*  Задаем высоту для контейнера */
-  }
-  
-  .vacancy-image {
-    width: 100%;
-    display: block; /* Убираем небольшой отступ под изображением */
-    border-radius: 15px;
-  }
-  
-  .vacancy-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #1D1B1B;
-    opacity: 0.84;
-    border-radius: 15px;
-  }
-  
-  .vacancy-title {
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #FF4800;
-    color: white;
-    font-size: 1.4em;
-    font-family: 'ШапкаЗаголовки', sans-serif;
-    font-weight: bold;
-    width: 260px;  /* Фиксированная ширина */
-    height: 45px; /* Фиксированная высота */
-    line-height: 42px; /* Центрируем текст по вертикали */
-    padding: 0; /* Убираем padding */
-    white-space: nowrap;
-    border: 2px solid white;
-    border-radius: 15px;
-    z-index: 1;
-    text-align: center;
-  }
-  
-  .vacancy-description {
-    position: absolute;
-    bottom: 100px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-left: 50px;
-    color: white;
-    text-align: left;
-    z-index: 1;
-    width: 80%; /*  Ограничиваем ширину */
-    height: 37%;
 }
-  
-  .vacancy-description li {
-    margin-bottom: 10px;
-    font-size: 1.5em;
-    line-height: 1.2;
-  }
+
+.vacancy-item {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  margin-left: 30px; /* Добавляем отступ слева */
+  margin-right: 30px; /* Добавляем отступ справа */
+  box-sizing: border-box; /* Важно, чтобы padding не увеличивал ширину */
+}
+
+.vacancy-image-container {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  height: 400px; /* Задаем высоту для контейнера */
+}
+
+.vacancy-image {
+  width: 100%;
+  display: block;
+  border-radius: 15px;
+  object-fit: cover; /* Важно, чтобы картинка заполняла контейнер */
+  height: 100%; /* Заполняем весь контейнер */
+}
+
+.vacancy-details { /* Стиль для нового контейнера */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;  /* Центрируем текст по горизонтали */
+  color: white;
+  z-index: 1; /*  Важно, чтобы текст был поверх картинки */
+  padding-top: 20px;
+}
+
+.vacancy-title {
+  background-color: #FF4800;
+  font-size: 1.4em;
+  font-family: 'ШапкаЗаголовки', sans-serif;
+  font-weight: bold;
+  width: 260px;
+  height: 45px;
+  line-height: 42px;
+  border: 2px solid white;
+  border-radius: 15px;
+  margin-bottom: 15px; /* Отступ между названием и описанием */
+}
+
+.vacancy-description {
+  padding-left: 0;
+  width: 80%;
+  margin: 0 auto;
+  padding-left: 40px; /* Добавляем отступ слева для маркера */
+}
+
+.vacancy-description li {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  line-height: 1.2;
+  position: relative; /* Для позиционирования псевдоэлемента */
+  list-style: none; /* Убираем стандартные маркеры списка */
+  text-align: left;
+}
+
+.vacancy-description li::before {
+  content: '\2022'; /* Код символа кружочка */
+  position: absolute;
+  left: -1.2em; /* Позиционируем кружочек слева от текста */
+  color: white; /* Цвет кружочка */
+  font-size: 1.2em; /* Размер кружочка */
+}
 
 /*2 блок */
 .job-item {
@@ -150,6 +156,15 @@ p.contact-block {
   width: fit-content;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
 }
+.contact-block a {
+  color: inherit; /* Наследует цвет текста от родительского элемента */
+  text-decoration: none; /* Убирает подчеркивание */
+}
+
+.contact-block a:hover {
+  text-decoration: underline; /* Убирает подчеркивание */
+}
+
 .black-text {
   color: black;
   font-weight: bold;
@@ -166,7 +181,7 @@ p.contact-block {
   }
 
   .vacancy-image-container {
-    height: 390px;
+    height: 380px;
   }
 
   .vacancy-title {
@@ -176,16 +191,15 @@ p.contact-block {
     line-height: 1.2;
     padding: 10px;
     text-align: center;
-    margin-bottom: 10px; /* Добавляем отступ снизу */
+    margin-bottom: 35px; /* Добавляем отступ снизу */
   }
 
   .vacancy-description {
     color: rgb(255, 255, 255);
-    padding: 0;
-    font-size: 1.2em;
-    width: 60%;
+    padding: 5px;
+    font-size: 1.3em;
+    width: 70%;
     height: auto;
-    margin-top: 10px; /* Добавляем отступ сверху (альтернативный способ) */
   }
 
   .vacancy-description li {
@@ -207,7 +221,7 @@ p.contact-block {
   }
 
   .job-text {
-    font-size: 1.3em;
+    font-size: 1.5em;
     line-height: 1.4;
     white-space: normal;
   }
@@ -247,45 +261,50 @@ p.contact-block {
 }
 @media (min-width: 769px) and (max-width: 992px) {
   .vacancies {
-    flex-direction: row; /* Возвращаем горизонтальное расположение */
-    flex-wrap: wrap; /* Разрешаем перенос на новую строку */
-    justify-content: space-around; /* Равномерно распределяем элементы */
-    align-items: stretch; /* Растягиваем элементы по высоте */
+    flex-direction: column; /* Вертикальное расположение */
+    align-items: center;    /* Выравнивание по центру */
   }
 
   .vacancy-item {
-    width: calc(50% - 20px); /* 2 элемента в ряд с учетом отступов */
-    margin-bottom: 20px;
+    width: 100%;       /* Увеличиваем ширину для лучшего использования пространства */
+    margin-bottom: 20px;   /* Увеличиваем отступ для лучшего визуального разделения */
   }
 
   .vacancy-image-container {
-    height: 250px; /* Высота изображения */
+    height: 360px;      /* Уменьшаем высоту для соответствия размеру экрана */
+    margin-bottom: 15px;  /* Добавляем отступ от картинки до текста */
   }
 
   .vacancy-title {
-    font-size: 1em; /* Размер шрифта */
-    padding: 5px;
-    width: 80%;
+    font-size: 1.3em;     /* Увеличиваем размер заголовка */
+    width: 80%;       /* Увеличиваем ширину */
     height: auto;
-    box-sizing: border-box;
+    line-height: 1.3;    /* Увеличиваем межстрочный интервал */
+    padding: 15px;      /* Увеличиваем отступы */
+    text-align: center;
+    margin-bottom: 25px;  /* Увеличиваем отступ */
   }
 
   .vacancy-description {
-    position: absolute;
-    bottom: 20px; /* Расположение внизу */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    text-align: center;
-    color: white;
-    font-size: 1.2em;
-    padding: 0px 10px;
+    color: rgb(255, 255, 255);
+    padding: 10px;      /* Увеличиваем отступы */
+    font-size: 1.3em;     /* Увеличиваем размер текста */
+    width: 80%;       /* Увеличиваем ширину */
+    height: auto;
   }
 
   .vacancy-description li {
-    font-size: 1em;
-    line-height: 1.2;
+    font-size: 1.3em;     /* Увеличиваем размер текста в списке */
+    margin-bottom: 12px;  /* Увеличиваем отступ */
+    line-height: 1.4;   /* Увеличиваем межстрочный интервал */
   }
+
+  .vacancy-description li::before {
+  left: -0.8em; /* Позиционируем кружочек слева от текста */
+  color: white; /* Цвет кружочка */
+  font-size: 1.2em; /* Размер кружочка */
+}
+
   /*работа*/
   .job-item {
     margin-bottom: 20px;

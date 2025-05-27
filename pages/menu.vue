@@ -13,7 +13,7 @@
         <a href="#hot-dishes" 
            class="menu-category-button"
            :class="{ 'active': activeSection === 'hot-dishes' }"
-           @click="scrollToSection('hot-dishes')">Готовая еда</a>
+           @click="scrollToSection('hot-dishes')">Горячие блюда</a>
         <a href="#snacks" 
            class="menu-category-button"
            :class="{ 'active': activeSection === 'snacks' }"

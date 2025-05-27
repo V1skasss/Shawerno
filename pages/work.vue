@@ -6,36 +6,39 @@
         <div class="vacancy-item">
           <div class="vacancy-image-container">
             <img src="public/fon.webp" alt="Сборщик блюд" class="vacancy-image" />
-            <div class="vacancy-overlay"></div>
-            <div class="vacancy-title">Сборщик блюд</div>
-            <ul class="vacancy-description">
-              <li>Собирать блюда из ингредиентов</li>
-              <li>Поддерживать чистоту и порядок на рабочем месте</li>
-            </ul>
+            <div class="vacancy-details">  <!-- Новый контейнер для названия и описания -->
+              <div class="vacancy-title">Сборщик блюд</div>
+              <ul class="vacancy-description">
+                <li>Собирать блюда из ингредиентов</li>
+                <li>Поддерживать чистоту и порядок на рабочем месте</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div class="vacancy-item">
           <div class="vacancy-image-container">
             <img src="public/fon.webp" alt="Кассир" class="vacancy-image" />
-            <div class="vacancy-overlay"></div>
-            <div class="vacancy-title">Кассир</div>
-            <ul class="vacancy-description">
-              <li>Принимать заказы и осуществлять расчеты с гостями</li>
-              <li>Поддерживать порядок в зоне кассы</li>
-            </ul>
+            <div class="vacancy-details">  <!-- Новый контейнер для названия и описания -->
+              <div class="vacancy-title">Кассир</div>
+              <ul class="vacancy-description">
+                <li>Принимать заказы и осуществлять расчеты с гостями</li>
+                <li>Поддерживать порядок в зоне кассы</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div class="vacancy-item">
           <div class="vacancy-image-container">
             <img src="public/fon.webp" alt="Помощник" class="vacancy-image" />
-            <div class="vacancy-overlay"></div>
-            <div class="vacancy-title">Помощник</div>
-            <ul class="vacancy-description">
-              <li>Помощь в подготовке ингредиентов</li>
-              <li>Поддержание чистоты и порядка на кухне</li>
-            </ul>
+            <div class="vacancy-details">  <!-- Новый контейнер для названия и описания -->
+              <div class="vacancy-title">Помощник</div>
+              <ul class="vacancy-description">
+                <li>Помощь в подготовке ингредиентов</li>
+                <li>Поддержание чистоты и порядка на кухне</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -75,7 +78,7 @@
       <div class="contact-blocks">
         <p class="contact-block">Нам важен <span class="black-text">ТЫ</span>, а не опыт!</p>
         <p class="contact-block">
-          +7 939 758-90-21 <br />
+          <a href="tel:+79397589021">+7 939 758-90-21</a> <br />
           <span class="black-text">Отдел кадров</span>
         </p>
       </div>

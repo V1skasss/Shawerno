@@ -166,6 +166,26 @@
   width: 100%; /* Чтобы дисклеймер занимал всю ширину actions-container */
 }
 
+.action-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 0 20px; /* Оставьте margin, если нужен отступ между элементами */
+}
+
+.action-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 30px;
+}
+
+.action-item h3 {
+  margin-top: 10px;
+  font-size: 1.2em;
+}
+
 /* Модальное окно */
 .actions-modal {
   position: fixed;
@@ -399,11 +419,38 @@
 }
 
 .secret-guest-image {
-  border-radius: 15px;
   width: 100%;
   max-width: 100%; /* Ограничиваем размер картинки внутри контейнера */
   margin-bottom: 20px; /* Расстояние между картинкой и кнопкой */
   align-items: center;
+}
+
+/* Общие стили для секции с картой */
+.section {
+  padding: 20px;
+}
+
+.title {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px; /* Подстрой под дизайн */
+  margin: 0 auto;
+}
+
+/* Стили для контейнера ClientOnly */
+.client-only-placeholder {
+  height: 500px; /*  высоту, которую должна занимать карта */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  color: #888;
+  background-color: #f5f5f5; /* Серый фон */
+  border-radius: 5px;
 }
 
 /* Для маленьких экранов (максимальная ширина 768px) */
@@ -796,6 +843,7 @@
     max-height: 450px;
   }
 }
+
 
 
 

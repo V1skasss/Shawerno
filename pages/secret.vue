@@ -29,7 +29,7 @@
     <div class="secret-guest-contact-section">
       <div class="secret-guest-contact-blocks">
         <p class="secret-guest-contact-block">
-          +7 968 194-59-69 <br />
+          <a href="tel:+79681945969">+7 968 194-59-69</a> <br /> 
           <span class="black-text">Отдел обратной связи</span>
         </p>
       </div>

@@ -46,6 +46,9 @@
             <img src="public/appSt.webp" alt="App Store" class="app-image" />
           </a>
         </div>
+        <div class="privacy-policy-link">
+      <a href="https://dostavka.shaverno.ru/privacy-policy" target="_blank" class="footer-policy">Политика конфиденциальности</a>
+    </div>
       </div>
     </div>
     <div class="copyright">Шаверно 2025 &copy;</div>
@@ -117,6 +120,18 @@
   margin-top: 0px;
 }
 
+.footer-policy {
+  color: #EB4200; /* Цвет как у .footer-title */
+  font-weight: bold; /* Жирный шрифт как у .footer-title */
+  font-size: 1.5em; /* Размер шрифта как у .footer-title */
+  text-decoration: none;
+}
+
+.footer-policy:hover {
+  text-decoration: underline;
+}
+
+
 .footer-link {
   display: block;
   color: #333;
@@ -140,6 +155,8 @@
   display: flex; /* Располагаем изображения в ряд */
   align-items: center;
   gap: 15px; /* Добавляем отступ между элементами */
+  margin-bottom: 10px;
+  text-decoration: none;
 }
 
 .app-image {
@@ -226,6 +243,10 @@
     width: 100px; /* Уменьшаем размер иконок */
   }
 
+  .footer-policy{
+    font-size: 1.3em;
+  }
+
   .copyright {
     font-size: 1em; /* Уменьшаем размер шрифта */
   }
@@ -252,6 +273,10 @@
     gap: 10px; /* Smaller gap */
   }
 
+  .footer-policy{
+    font-size: 1.4em;
+  }
+
   .app-image {
     width: 120px; /* Smaller images */
   }
@@ -264,8 +289,6 @@
 </style>
 
 <script>
-
-
 export default {
   mounted() {
     if (process.client) {
@@ -294,4 +317,33 @@ export default {
     },
   },
 };
+
+import { useHead } from '@vueuse/head';
+import { useRoute } from 'vue-router';
+import { onMounted } from 'vue';
+
+const baseUrl = 'https://shaverno-rho.vercel.app/';
+const title = 'Шаверно - Шаверма, за которой возвращаются';
+const description = 'Городская сеть шаверм, в которых в лучшем виде сочетаются быстрая скорость обслуживания, доступные цены и высокое качество блюд.';
+const imageUrl = `${baseUrl}/public/graph.webp`;
+
+onMounted(() => {  // Переносим код в onMounted
+  const route = useRoute(); // Получаем route внутри onMounted
+
+  useHead({
+    title: title,
+    meta: [
+      { name: 'description', content: description },
+      { property: 'og:title', content: title },
+      { property: 'og:description', content: description },
+      { property: 'og:image', content: imageUrl },
+      { property: 'og:url', content: `${baseUrl}${route.path}` },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:site_name', content: 'Шаверно' },
+    ],
+    link: [
+      { rel: 'canonical', href: `${baseUrl}${route.path}` }
+    ]
+  });
+});
 </script>
