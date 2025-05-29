@@ -5,7 +5,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
 
   app: {
-    baseURL: '/', // Упрощено до базового пути
+    baseURL: '/', 
     head: {
       title: 'Шаверно',
       meta: [
@@ -19,7 +19,15 @@ export default defineNuxtConfig({
         {
           name: 'google-site-verification',
           content: 'Jn39l2MoQ9tYBTMw7fsAdG_W9y9QYrddaw2wRzTp1ds' 
-        }
+        },
+        // Open Graph
+        { hid: 'og:title', property: 'og:title', content: 'Шаверно - Лучшая шаверма в городе' },
+        { hid: 'og:description', property: 'og:description', content: 'Городская сеть шаверм, в которых в лучшем виде сочетаются быстрая скорость обслуживания, доступные цены и высокое качество блюд.' },
+        { hid: 'og:type', property: 'og:type', content: 'website' },
+        { hid: 'og:url', property: 'og:url', content: 'https://shaverno.vercel.app/' },
+        { hid: 'og:image', property: 'og:image', content: '/graph.webp' },
+        { hid: 'og:site_name', property: 'og:site_name', content: 'Шаверно' },
+        { hid: 'og:locale', property: 'og:locale', content: 'ru_RU' },
       ],
       link: [
         { rel: 'icon', type: 'image/webp', href: '/logoURL.webp' }
