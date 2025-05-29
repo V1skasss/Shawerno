@@ -197,9 +197,9 @@ p.contact-block {
   .vacancy-description {
     color: rgb(255, 255, 255);
     padding: 5px;
-    font-size: 1.3em;
-    width: 70%;
-    height: auto;
+    font-size: 1.2em;
+    width: 65%;
+    
   }
 
   .vacancy-description li {

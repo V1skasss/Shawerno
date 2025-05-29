@@ -161,7 +161,8 @@
 
   .about-video iframe {
     width: 90%; /* Растягиваем на всю ширину контейнера */
-    height: 250px; /* Автоматическая высота */
+    height: 210px; /* Автоматическая высота */
+    margin-bottom: -40px;
   }
 }
 @media (min-width: 769px) and (max-width: 992px) {

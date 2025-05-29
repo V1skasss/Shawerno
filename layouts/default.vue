@@ -183,7 +183,7 @@
 /* Адаптивные стили */
 @media (max-width: 768px) {
   .container {
-    padding: 0 10px;
+    padding: 0 0px;
   }
 
   .nav {
@@ -228,7 +228,7 @@
   }
 
   .footer-title {
-    margin-top: 10px; /* Уменьшаем отступ сверху */
+    margin-top: 5px; /* Уменьшаем отступ сверху */
     font-size: 1.3em; /* Уменьшаем размер шрифта */
   }
 
@@ -249,7 +249,7 @@
   }
 
   .copyright {
-    font-size: 1em; /* Уменьшаем размер шрифта */
+    font-size: 1.1em; /* Уменьшаем размер шрифта */
   }
 }
 @media (min-width: 769px) and (max-width: 992px) {
