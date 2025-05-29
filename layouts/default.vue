@@ -34,8 +34,9 @@
           <h4 class="footer-title">Связаться с нами:</h4>
           <a href="mailto:shaverno.rest@gmail.com" class="footer-link">Mail: shaverno.rest@gmail.com</a>
           <a href="https://wa.me/79681945969" class="footer-link">Whatsapp: +7 968 194-59-69</a>
+          <a href="/sitemap" class="footer-policy">Карта сайта</a>
         </div>
-
+        
         <div class="delivery-info">
         <h4 class="footer-title">Наше приложение:</h4>
         <div class="app-links">
@@ -137,7 +138,7 @@
   color: #333;
   font-size: 1.4em;
   text-decoration: none;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .footer-link:hover {

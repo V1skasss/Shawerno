@@ -18,12 +18,12 @@ export default defineNuxtConfig({
         },
         {
           name: 'google-site-verification',
-          content: 'Jn39l2MoQ9tYBTMw7fsAdG_W9y9QYrddaw2wRzTp1ds' // Только код, без .html
+          content: 'Jn39l2MoQ9tYBTMw7fsAdG_W9y9QYrddaw2wRzTp1ds' 
         }
       ],
       link: [
         { rel: 'icon', type: 'image/webp', href: '/logoURL.webp' }
-        // Canonical ссылка удалена для упрощения
+        
       ]
     }
   },
