@@ -13,6 +13,18 @@ const organization = {
   "description": "Городская сеть шаверм, в которых в лучшем виде сочетаются быстрая скорость обслуживания, доступные цены и высокое качество блюд.",
   "telephone": "+7 (968) 194-59-69",
   "servesCuisine": ["Шаверма", "Фастфуд"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Гражданский проспект, 66к1",
+    "addressLocality": "Санкт-Петербург",
+    "addressCountry": "RU",
+    "postalCode": "195257" 
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "60.01395", 
+    "longitude": "30.39609" 
+  }
 }
 
 useHead({
