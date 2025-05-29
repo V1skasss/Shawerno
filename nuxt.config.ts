@@ -15,6 +15,10 @@ export default defineNuxtConfig({
           hid: 'description',
           name: 'description',
           content: 'Городская сеть шаверм, в которых в лучшем виде сочетаются быстрая скорость обслуживания, доступные цены и высокое качество блюд.'
+        },
+        {
+          name: 'google-site-verification',
+          content: 'google2711857c11b3790e' // Только код, без .html
         }
       ],
       link: [
