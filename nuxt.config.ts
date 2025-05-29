@@ -18,7 +18,7 @@ export default defineNuxtConfig({
         },
         {
           name: 'google-site-verification',
-          content: 'google2711857c11b3790e' // Только код, без .html
+          content: 'Jn39l2MoQ9tYBTMw7fsAdG_W9y9QYrddaw2wRzTp1ds' // Только код, без .html
         }
       ],
       link: [
